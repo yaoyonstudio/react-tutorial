@@ -1,0 +1,165 @@
+html, body, #root {
+  width: 100%;
+  height: 100%; }
+
+html {
+  font-size: 625%; }
+
+body {
+  font-size: .14rem; }
+
+a {
+  color: #333; }
+
+hr {
+  margin: .1rem 0; }
+
+.App {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  height: 100%;
+  width: 100%; }
+
+.Page {
+  flex: 1;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  position: relative; }
+
+.Menu {
+  background-color: #d33;
+  color: #fff;
+  width: 100%; }
+  .Menu ul {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%; }
+    .Menu ul li {
+      display: flex;
+      flex: 1;
+      height: .4rem;
+      line-height: .4rem;
+      text-align: center; }
+      .Menu ul li a {
+        color: #fff;
+        display: block;
+        width: 100%;
+        height: 100%; }
+    .Menu ul li:not(:first-child) {
+      border-left: 1px solid #fff; }
+  .Menu .active {
+    background-color: #0a8acd; }
+
+.SubMenu {
+  display: block;
+  width: 100%; }
+  .SubMenu li {
+    border-bottom: 1px solid #ddd;
+    height: .4rem;
+    line-height: .4rem; }
+    .SubMenu li a {
+      display: block;
+      height: 100%;
+      padding: 0 .1rem; }
+
+.Notfound {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; }
+  .Notfound img {
+    margin: 0 auto;
+    margin-top: .3rem;
+    width: 80%; }
+
+.Rheader {
+  background-color: #0a8acd;
+  color: #fff;
+  width: 100%;
+  height: .4rem;
+  line-height: .4rem;
+  text-align: center;
+  position: fixed; }
+  .Rheader h2 {
+    font-size: .2rem;
+    width: 75%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin: 0 auto;
+    white-space: nowrap; }
+  .Rheader img {
+    height: .2rem;
+    position: absolute;
+    top: .1rem;
+    left: .1rem; }
+
+.Main {
+  flex: 1;
+  margin-top: .4rem;
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+  overflow-y: auto;
+  padding: .1rem;
+  padding-bottom: .4rem; }
+  .Main img {
+    max-width: 100%; }
+  .Main p span {
+    color: #d33; }
+
+.Basic {
+  padding: 0; }
+
+.Child {
+  margin: .1rem 0;
+  border: 1px solid #ddd;
+  padding: .1rem; }
+
+label {
+  display: block; }
+
+.PostItem {
+  border-bottom: 1px solid #ddd;
+  padding: .1rem 0; }
+  .PostItem a h4 {
+    color: #666;
+    font-size: .18rem;
+    margin-bottom: .05rem; }
+  .PostItem a .thumbnail_imgs {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%; }
+    .PostItem a .thumbnail_imgs li {
+      display: block;
+      flex: 1; }
+      .PostItem a .thumbnail_imgs li img {
+        width: 100%; }
+    .PostItem a .thumbnail_imgs li:not(:last-child) {
+      margin-right: .08rem; }
+
+.Post .Post_header {
+  border-bottom: 1px solid #ddd;
+  padding-bottom: .1rem; }
+  .Post .Post_header p {
+    color: #999;
+    margin-top: .05rem; }
+    .Post .Post_header p span {
+      float: right; }
+
+.Post .Post_featured {
+  margin: .1rem 0; }
+
+.Post .Post_content {
+  color: #666; }
+
+.box {
+  width: 3rem;
+  height: 3rem;
+  background-color: #ccc; }

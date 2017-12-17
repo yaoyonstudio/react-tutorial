@@ -1,0 +1,223 @@
+$mainColor: #d33;
+$activeColor: #0a8acd;
+$borderColor: #ddd;
+$fontColor1: #333;
+$fontColor2: #666;
+$fontColor3: #999;
+
+@mixin flex($direction: row, $align: center, $justify: center) {
+  display: flex;
+  flex-direction: $direction;
+  align-items: $align;
+  justify-content: $justify;
+}
+
+@mixin flexRow($align: center, $justify: center) {
+  display: flex;
+  flex-direction: row;
+  align-items: $align;
+  justify-content: $justify;
+}
+
+@mixin flexColumn($align: center, $justify: center) {
+  display: flex;
+  flex-direction: column;
+  align-items: $align;
+  justify-content: $justify;
+}
+
+html, body, #root {
+  width: 100%;
+  height: 100%;
+}
+
+html {
+  font-size: 625%;
+}
+
+body {
+  font-size: .14rem;
+}
+
+a {
+  color: $fontColor1;
+}
+
+hr {
+  margin: .1rem 0;
+}
+
+.App {
+  @include flexColumn(flex-start, space-between);
+  height: 100%;
+  width: 100%;
+}
+
+.Page {
+  flex: 1;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.Menu {
+  background-color: $mainColor;
+  color: #fff;
+  width: 100%;
+  ul {
+    @include flexRow(center, space-between);
+    width: 100%;
+    li {
+      display: flex;
+      flex: 1;
+      height: .4rem;
+      line-height: .4rem;
+      text-align: center;
+      a {
+        color: #fff;  
+        display: block;
+        width: 100%;
+        height: 100%;
+      }
+    }
+    li:not(:first-child) {
+      border-left: 1px solid #fff;
+    }
+  }
+  .active {
+    background-color: $activeColor;
+  }
+}
+
+.SubMenu {
+  display: block;
+  width: 100%;
+  li {
+    border-bottom: 1px solid $borderColor;
+    height: .4rem;
+    line-height: .4rem;
+    a {
+      display: block;
+      height: 100%;
+      padding: 0 .1rem;
+    }
+  }
+}
+
+.Notfound {
+  @include flexColumn;
+  img {
+    margin: 0 auto;
+    margin-top: .3rem;
+    width: 80%;
+  }
+}
+
+.Rheader {
+  background-color: $activeColor;
+  color: #fff;
+  width: 100%;
+  height: .4rem;
+  line-height: .4rem;
+  text-align: center;
+  position: fixed;
+  h2 {
+    font-size: .2rem;
+    width: 75%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin: 0 auto;
+    white-space: nowrap;
+  }
+  img {
+    height: .2rem;
+    position: absolute;
+    top: .1rem;
+    left: .1rem;
+  }
+}
+
+.Main {
+  flex: 1;
+  margin-top: .4rem;
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+  overflow-y: auto;
+  padding: .1rem;
+  padding-bottom: .4rem;
+  img {
+    max-width: 100%;
+  }
+  p {
+    span {
+      color: $mainColor;
+    }
+  }
+}
+
+.Basic {
+  padding: 0;
+}
+
+.Child {
+  margin: .1rem 0;
+  border: 1px solid $borderColor;
+  padding: .1rem;
+}
+
+label {
+  display: block;
+}
+
+.PostItem {
+  border-bottom: 1px solid $borderColor;
+  padding: .1rem 0;
+  a {
+    h4 {
+      color: $fontColor2;
+      font-size: .18rem;
+      margin-bottom: .05rem;
+    }
+    .thumbnail_imgs {
+      @include flexRow(center, space-between);
+      width: 100%;
+      li {
+        display: block;
+        flex: 1;
+        img {
+          width: 100%;
+        }
+      }
+      li:not(:last-child) {
+        margin-right: .08rem;
+      }
+    }
+  }
+}
+
+.Post {
+  .Post_header {
+    border-bottom: 1px solid $borderColor;
+    padding-bottom: .1rem;
+    p {
+      color: $fontColor3;
+      margin-top: .05rem;
+      span {
+        float: right;
+      }
+    }
+  }
+  .Post_featured {
+    margin: .1rem 0;
+  }
+  .Post_content {
+    color: $fontColor2;
+  }
+}
+
+
+.box {
+  width: 3rem;height: 3rem; background-color: #ccc;
+}
