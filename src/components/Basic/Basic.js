@@ -51,6 +51,10 @@ class Basic extends Component {
         {
           title: 'Refs',
           name: 'refs'
+        },
+        {
+          title: 'Composition',
+          name: 'composition'
         }
       ]
     }

@@ -6,8 +6,9 @@ import './App.css';
 import routes from './routes'
 import Menu from './components/partial/Menu'
 
-import Posts from './components/Router/Posts'
-import Post from './components/Router/Post'
+// import PostList from './components/Practice/InfiniteScroll/PostList'
+// import Posts from './components/Practice/InfiniteScroll/Posts'
+// import Post from './components/Practice/InfiniteScroll/Post'
 
 const history = createBrowserHistory()
 
@@ -17,8 +18,9 @@ class App extends Component {
       <Router history={history}>
         <div className="App">
           <Switch>
+            {/* <Route exact path="/postlist" component={PostList} />
             <Route exact path="/posts" component={Posts} />
-            <Route path= "/posts/:id" render={(history) => !history.match.params.id || !parseInt(history.match.params.id) ? <Redirect to="/posts" /> : <Post router={history} />} />
+            <Route path= "/posts/:id" render={(history) => !history.match.params.id || !parseInt(history.match.params.id, 10) ? <Redirect to="/posts" /> : <Post router={history} />} /> */}
 
             {routes.map((route, i) => <Route key={i} exact path={route.path} component={route.component} />)}          
           </Switch>

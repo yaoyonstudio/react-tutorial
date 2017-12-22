@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 
 import axios from 'axios'
-import Page from '../Page'
+import Page from '../../Page'
 
-const API_URL = 'http://localhost:3001/posts'
+const API_URL = 'http://localhost:8888/posts'
 
 class Post extends Component {
   constructor(props) {
@@ -11,10 +11,11 @@ class Post extends Component {
     this.state = {
       data: {}
     }
+    console.log(this)
   }
 
   componentDidMount() {
-    axios.get(API_URL + '/' + this.props.router.match.params.id)
+    axios.get(API_URL + '/' + this.props.match.params.id)
       .then((res) => {
         console.log(res)
         if (res.status === 200) {

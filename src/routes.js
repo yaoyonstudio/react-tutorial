@@ -13,8 +13,14 @@ import Lists from './components/Basic/Lists'
 import Forms from './components/Basic/Forms'
 import CreateElement from './components/Basic/CreateElement'
 import Refs from './components/Basic/Refs'
+import Composition from './components/Basic/Composition'
 
 import Practice from './components/Practice/Practice'
+import PostList from './components/Practice/InfiniteScroll/PostList'
+import Posts from './components/Practice/InfiniteScroll/Posts'
+import Post from './components/Practice/InfiniteScroll/Post'
+import SwiperPage from './components/Practice/Swiper/SwiperPage'
+import FilterPage from './components/Practice/Filter/FilterPage'
 import Test from './components/Test'
 
 const routes = [
@@ -32,7 +38,13 @@ const routes = [
   { path: '/basic/forms', component: Forms },
   { path: '/basic/createElement', component: CreateElement },
   { path: '/basic/refs', component: Refs },
+  { path: '/basic/composition', component: Composition },
   { path: '/practice', component: Practice },
+  { path: '/practice/posts', component: Posts },
+  { path: '/practice/postlist', component: PostList },
+  { path: '/practice/posts/:id', component: Post },
+  { path: '/practice/swiperPage', component: SwiperPage },
+  { path: '/practice/filterPage', component: FilterPage },
   { path: '/test', component: Test },
   { path: '*', component: Notfound }
 ]
