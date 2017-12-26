@@ -51,6 +51,7 @@ class Filters extends Component {
 
   init () {
     this.setState({
+      currentName: '',
       currentSelectData: [],
       currentMultipleSelectData: [],
       currentMultipleSelectSubData: [],
@@ -59,6 +60,11 @@ class Filters extends Component {
 
   toggleSelect (item) {
     console.log('选择类型：', item)
+    // 如果点击同一个，则收起原展开的，如果点击类型是more，则每次都打开
+    if (this.state.currentName && this.state.currentName === item.name && (item.type === 'select' || item.type === 'multiple')) {
+      this.init()
+      return false
+    }
     this.init()
     this.setState({
       currentName: item.name
@@ -141,7 +147,44 @@ class Filters extends Component {
         {this.props.data && this.props.data.length
           ? (
             <ul className="Filters_container">
-              {this.props.data.map((item, index) => <li onClick={() => this.toggleSelect(item)} className="Filters_item" key={index}><span>{item.title}</span></li>)}
+              {this.props.data.map((item, index) => (
+                <li onClick={() => this.toggleSelect(item)} className="Filters_item" key={index}>
+                  <span>{item.title}</span>
+                  {item.type === 'select'
+                    ? (
+                      <span className="Filters_item_icon Filters_item_icon_select">
+                        <i className={this.state.currentSelectData.length ? 'select active' : 'select'}></i>
+                      </span>
+                      )
+                    : ''
+                  }
+                  {item.type === 'multiple'
+                    ? (
+                      <span className="Filters_item_icon Filters_item_icon_select">
+                        <i className={this.state.currentMultipleSelectData.length ? 'select active' : 'select'}></i>
+                      </span>
+                      )
+                    : ''
+                  }
+                  {item.type === 'order'
+                    ? (
+                      <span className="Filters_item_icon Filters_item_icon_order">
+                        <i className={this.state.conditions[item.name] === 1 ? 'order_up active_up' : 'order_up'}></i>
+                        <i className={this.state.conditions[item.name] === 2 ? 'order_down active_down' : 'order_down'}></i>
+                      </span>
+                      )
+                    : ''
+                  }
+                  {item.type === 'more'
+                    ? (
+                      <span className="Filters_item_icon Filters_item_icon_more">
+                        <i></i>
+                      </span>
+                      )
+                    : ''
+                  }
+                </li>
+              ))}
             </ul>
           )
           : ''

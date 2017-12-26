@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 
 import Page from '../../Page'
 import Swiper from './Swiper'
+import Swipers from './Swipers'
 import Scroller from './Scroller'
 
 class SwiperPage extends Component {
@@ -10,7 +11,11 @@ class SwiperPage extends Component {
     this.state = {
       slides: [
         {id: 1, title: '标题一', 'img_url': 'http://tower.tigonetwork.com/test/s1.jpg', link_url: 'http://www.baidu.com'},
-        {id: 1, title: '标题二', 'img_url': 'http://tower.tigonetwork.com/test/s2.jpg', link_url: 'http://www.baidu.com'}
+        {id: 2, title: '标题二', 'img_url': 'http://tower.tigonetwork.com/test/s2.jpg', link_url: 'http://www.baidu.com'},
+        {id: 3, title: '标题三', 'img_url': 'http://tower.tigonetwork.com/test/s3.jpg', link_url: 'http://www.baidu.com'},
+        {id: 4, title: '标题四', 'img_url': 'http://tower.tigonetwork.com/test/s4.jpg', link_url: 'http://www.baidu.com'},
+        {id: 5, title: '标题五', 'img_url': 'http://tower.tigonetwork.com/test/s5.jpg', link_url: 'http://www.baidu.com'},
+        {id: 6, title: '标题六', 'img_url': 'http://tower.tigonetwork.com/test/s6.jpg', link_url: 'http://www.baidu.com'}
       ],
       data: [
         {id: 1, title: '标题一'}, 
@@ -31,6 +36,8 @@ class SwiperPage extends Component {
           <Swiper data={this.state.slides} />
           <hr />
           <Scroller data={this.state.data} />
+          <hr />
+          <Swipers data={this.state.slides} />
         </div>
           
       </Page>

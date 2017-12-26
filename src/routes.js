@@ -21,6 +21,9 @@ import Posts from './components/Practice/InfiniteScroll/Posts'
 import Post from './components/Practice/InfiniteScroll/Post'
 import SwiperPage from './components/Practice/Swiper/SwiperPage'
 import FilterPage from './components/Practice/Filter/FilterPage'
+import TabMenuPage from './components/Practice/TabMenu/TabMenuPage'
+import SideMenuPage from './components/Practice/SideMenu/SideMenuPage'
+import ImgSliderPage from './components/Practice/ImgSlider/ImgSliderPage'
 import Test from './components/Test'
 
 const routes = [
@@ -45,6 +48,9 @@ const routes = [
   { path: '/practice/posts/:id', component: Post },
   { path: '/practice/swiperPage', component: SwiperPage },
   { path: '/practice/filterPage', component: FilterPage },
+  { path: '/practice/tabMenuPage', component: TabMenuPage },
+  { path: '/practice/sideMenuPage', component: SideMenuPage },
+  { path: '/practice/imgSliderPage', component: ImgSliderPage },
   { path: '/test', component: Test },
   { path: '*', component: Notfound }
 ]

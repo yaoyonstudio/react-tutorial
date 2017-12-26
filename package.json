@@ -6,12 +6,15 @@
     "axios": "0.17.1",
     "node-sass-chokidar": "0.0.3",
     "npm-run-all": "4.1.2",
+    "nuka-carousel": "^3.0.0",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
     "react-router": "4.2.0",
     "react-router-dom": "4.2.2",
     "react-scripts": "1.0.17",
-    "react-swipe": "^5.1.1"
+    "react-swipe": "^5.1.1",
+    "react-swipeable-views": "^0.12.12",
+    "react-swipes": "^1.0.9"
   },
   "scripts": {
     "build-css": "node-sass-chokidar src/ -o src/",

@@ -23,6 +23,18 @@ class Practice extends Component {
         {
           title: 'FilterPage',
           name: 'filterPage'
+        },
+        {
+          title: 'TabMenuPage',
+          name: 'tabMenuPage'
+        },
+        {
+          title: 'SideMenuPage',
+          name: 'sideMenuPage'
+        },
+        {
+          title: 'ImgSliderPage',
+          name: 'imgSliderPage'
         }
       ]
     }
